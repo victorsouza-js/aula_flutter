@@ -30,15 +30,17 @@ void increment(){
       floatingActionButton: FloatingActionButton(
         onPressed:increment,
         backgroundColor: Colors.blueAccent,
-        child: Icon(Icons.add, size: 30, color: Colors.white),
+        child: Icon(Icons.remove, size: 30, color: Colors.white),
+        
       ),
       
       appBar: AppBar(
         
         actions: [
         
-          IconButton(onPressed: (){}, icon: Icon(Icons.add, size: 20, color: Colors.yellow),),
-          IconButton(onPressed: (){}, icon: Icon(Icons.lock, size: 20, color: Colors.yellow),),
+          
+          IconButton(onPressed: (){}, icon: Icon(Icons.access_time, size: 20, color: Colors.yellow),),
+          IconButton(onPressed: (){}, icon: Icon(Icons.battery_full, size: 20, color: Colors.yellow),),
           
         ],
         
