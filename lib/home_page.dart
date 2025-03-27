@@ -38,10 +38,11 @@ void increment(){
         actions: [
         
           IconButton(onPressed: (){}, icon: Icon(Icons.add, size: 20, color: Colors.yellow),),
+          IconButton(onPressed: (){}, icon: Icon(Icons.lock, size: 20, color: Colors.yellow),),
           
         ],
         
-        title: Text('Contador',style: TextStyle(color: Colors.white),),
+        title: Text('Contador',style: TextStyle(color: Colors.white,fontSize: 15),),
         backgroundColor: Colors.blueAccent,
         
       ),
