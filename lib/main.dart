@@ -14,9 +14,7 @@ class Home extends StatelessWidget {
       
       home: Scaffold(
         body: Container(
-          
-          
-          
+        
         ),
       ),
     );
