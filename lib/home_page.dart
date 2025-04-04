@@ -8,11 +8,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final TextEditingController _controller = TextEditingController();
+  final List<String> _tarefas = [];
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _controller = TextEditingController();
-    final List<String> _tarefas = [];
-    final _formKey = GlobalKey<FormState>();
+    void _addTarefa() {
+      if (_formKey.currentState!.validate()) ;
+      setState(() {
+        _tarefas.add(_controller.text);
+        _controller.clear();
+      });
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -33,9 +40,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
 
-      drawer: Drawer(
-        
-      ),
+      drawer: Drawer(),
       body: Column(
         children: [
           SizedBox(height: 40),
@@ -45,20 +50,17 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Form(
+              autovalidateMode: AutovalidateMode.always,
               key: _formKey,
               child: TextFormField(
                 controller: _controller,
                 decoration: InputDecoration(
-                  
                   border: OutlineInputBorder(
-                    
                     borderSide: BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(10),
-                    
-                    
                   ),
 
-                  labelText: 'Digitar item',
+                  labelText: 'Adcionar tarefa',
                   labelStyle: TextStyle(color: Colors.black),
                 ),
 
@@ -78,13 +80,18 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: Colors.blue,
               foregroundColor: Colors.white,
             ),
-        
-            
-            onPressed: () {
-              if (_formKey.currentState!.validate());
-            },
-            child: Text('Adcionar',),
-          
+
+            onPressed: _addTarefa,
+            child: Text('Adcionar'),
+          ),
+
+          Expanded(
+            child: ListView.builder(
+              itemCount: _tarefas.length,
+              itemBuilder: (context, index) {
+                return ListTile(title: Text(_tarefas[index]));
+              },
+            ),
           ),
         ],
       ),
