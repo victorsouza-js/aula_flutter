@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Form(
-              autovalidateMode: AutovalidateMode.always,
+            
               key: _formKey,
               child: TextFormField(
                 controller: _controller,
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
             child: ListView.builder(
               itemCount: _tarefas.length,
               itemBuilder: (context, index) {
-                return ListTile(leading: Icon(Icons.account_circle),title: Text(_tarefas[index],
+                return ListTile(leading: Icon(Icons.beenhere),title: Text(_tarefas[index],
                 style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               subtitle: Text('Mais Informações'),
