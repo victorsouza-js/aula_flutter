@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               subtitle: Text('Mais Informações'),
-              trailing: Icon(Icons.add_circle),
+              trailing: IconButton(onPressed: (){}, icon: Icon(Icons.add_circle)),
                 );
               },
             ),
