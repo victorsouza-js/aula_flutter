@@ -89,7 +89,12 @@ class _HomePageState extends State<HomePage> {
             child: ListView.builder(
               itemCount: _tarefas.length,
               itemBuilder: (context, index) {
-                return ListTile(title: Text(_tarefas[index]));
+                return ListTile(leading: Icon(Icons.account_circle),title: Text(_tarefas[index],
+                style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              subtitle: Text('Mais Informações'),
+              trailing: Icon(Icons.add_circle),
+                );
               },
             ),
           ),
