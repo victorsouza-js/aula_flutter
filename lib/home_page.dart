@@ -8,6 +8,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool clicar = false;
+
+  void alterar() {
+    setState(() {
+      clicar = !clicar;
+      print(clicar);
+    });
+  }
+
   final TextEditingController _controller = TextEditingController();
   final List<String> _tarefas = [];
   final _formKey = GlobalKey<FormState>();
@@ -50,7 +59,6 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Form(
-            
               key: _formKey,
               child: TextFormField(
                 controller: _controller,
@@ -74,11 +82,28 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(height: 20),
+          Container(
+            width: double.infinity,
+            height: 30,
+            color: const Color.fromARGB(255, 0, 0, 0),
+            child: Center(
+              child: Text(
+                'Tarefas',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
 
           ElevatedButton(
             style: ElevatedButton.styleFrom(
+              elevation: 5,
               backgroundColor: Colors.blue,
               foregroundColor: Colors.white,
+              padding: EdgeInsets.all(14),
             ),
 
             onPressed: _addTarefa,
@@ -89,14 +114,29 @@ class _HomePageState extends State<HomePage> {
             child: ListView.builder(
               itemCount: _tarefas.length,
               itemBuilder: (context, index) {
-                return ListTile(leading: Icon(Icons.beenhere),title: Text(_tarefas[index],
-                style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              subtitle: Text('Mais Informações'),
-              trailing: IconButton(onPressed: (){}, icon: Icon(Icons.add_circle)),
+                return ListTile(
+                  leading: Icon(Icons.beenhere),
+                  title: Text(
+                    _tarefas[index],
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text('Mais Informações'),
+                  trailing: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.add_circle),
+                  ),
                 );
               },
             ),
+          ),
+          SizedBox(height: 40),
+          InkWell(
+            onTap: () {
+              alterar();
+            },
+            child: AnimatedContainer(duration: Duration(seconds: 3),
+            curve: Curves.bounceInOut,
+            width: clicar == true ? 200:100, height: clicar == true ? 200:100, color: clicar == true ? Colors.blueAccent:Colors.black38),
           ),
         ],
       ),
