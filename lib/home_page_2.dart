@@ -36,24 +36,24 @@ class _HomePage2State extends State<HomePage2> {
             print(clicou);
           },
           child: AnimatedAlign(
-            
             alignment:
                 clicou == true ? Alignment.bottomLeft : Alignment.topRight,
-            duration: Duration(seconds: 1),
-
-            curve: Curves.bounceInOut,
+            duration: Duration(seconds: 2),
 
             child: Container(
               width: 100,
               height: 100,
 
               decoration: BoxDecoration(
-                color: Colors.blueAccent,
-                
+                color:
+                    clicou == true
+                        ? Colors.blueAccent
+                        : const Color.fromARGB(255, 0, 0, 0),
+
                 borderRadius:
-              clicou == true
+                    clicou == true
                         ? BorderRadius.all(Radius.circular(0))
-                        : BorderRadius.all(Radius.circular(100)), 
+                        : BorderRadius.all(Radius.circular(100)),
               ),
             ),
           ),
