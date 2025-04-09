@@ -1,4 +1,5 @@
 import 'package:aula_flutter_2/home_page.dart';
+import 'package:aula_flutter_2/home_page_2.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -6,12 +7,6 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(
-        
-
-      ),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage2());
   }
 }

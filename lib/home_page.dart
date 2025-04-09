@@ -134,9 +134,21 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               alterar();
             },
-            child: AnimatedContainer(duration: Duration(seconds: 3),
-            curve: Curves.bounceInOut,
-            width: clicar == true ? 200:100, height: clicar == true ? 200:100, color: clicar == true ? Colors.blueAccent:Colors.black38),
+            child: AnimatedContainer(
+              duration: Duration(seconds: 1),
+              decoration: BoxDecoration(
+                color:
+                    clicar == true
+                        ? Colors.blueAccent
+                        : const Color.fromARGB(255, 0, 0, 0),
+                borderRadius:
+                    clicar == true
+                        ? BorderRadius.all(Radius.circular(0))
+                        : BorderRadius.all(Radius.circular(100)),
+              ),
+              width: clicar == true ? 200 : 100,
+              height: clicar == true ? 200 : 100,
+            ),
           ),
         ],
       ),
