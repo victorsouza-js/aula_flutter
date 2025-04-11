@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -148,6 +149,12 @@ class _HomePageState extends State<HomePage> {
               ),
               width: clicar == true ? 200 : 100,
               height: clicar == true ? 200 : 100,
+            ),
+          ),
+          SizedBox(height: 70),
+          Container(
+            child: Lottie.network(
+              'https://lottie.host/d173cd2b-056a-46de-8379-f01bff98143a/yOSt1FnPSk.json',
             ),
           ),
         ],

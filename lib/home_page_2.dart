@@ -38,7 +38,7 @@ class _HomePage2State extends State<HomePage2> {
           child: AnimatedAlign(
             alignment:
                 clicou == true ? Alignment.bottomLeft : Alignment.topRight,
-            duration: Duration(seconds: 2),
+            duration: Duration(seconds: 0),
 
             child: Container(
               width: 100,
@@ -57,6 +57,8 @@ class _HomePage2State extends State<HomePage2> {
               ),
             ),
           ),
+
+          
         ),
       ),
     );
