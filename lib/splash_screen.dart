@@ -9,15 +9,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await Future.delayed(Duration(seconds: 3));
-      Navigator.pushReplacementNamed(context, '/home');
-    });
 
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +26,9 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(height: 100),
             CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
             SizedBox(height: 200),
-            ElevatedButton(onPressed: () {}, child: Text('Voltar')),
+            ElevatedButton(onPressed: () {
+              Navigator.pushNamed(context, '/home');
+            }, child: Text('Voltar')),
           ],
         ),
       ),
