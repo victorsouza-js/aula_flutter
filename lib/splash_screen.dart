@@ -10,18 +10,31 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Future.delayed(Duration(seconds: 3));
+      Navigator.pushReplacementNamed(context, '/home');
+    });
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 4, 116, 62),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 300),
+            SizedBox(height: 100),
             Lottie.network(
               'https://lottie.host/15a28822-5eb3-4f10-aaca-279fd8e92042/Lpjdsraidx.json',
             ),
+
             SizedBox(height: 100),
             CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
+            SizedBox(height: 200),
+            ElevatedButton(onPressed: () {}, child: Text('Voltar')),
           ],
         ),
       ),

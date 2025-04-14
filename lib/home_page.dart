@@ -131,32 +131,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(height: 40),
-          InkWell(
-            onTap: () {
-              alterar();
-            },
-            child: AnimatedContainer(
-              duration: Duration(seconds: 1),
-              decoration: BoxDecoration(
-                color:
-                    clicar == true
-                        ? Colors.blueAccent
-                        : const Color.fromARGB(255, 0, 0, 0),
-                borderRadius:
-                    clicar == true
-                        ? BorderRadius.all(Radius.circular(0))
-                        : BorderRadius.all(Radius.circular(100)),
-              ),
-              width: clicar == true ? 200 : 100,
-              height: clicar == true ? 200 : 100,
-            ),
-          ),
-          SizedBox(height: 70),
-          Container(
-            child: Lottie.network(
-              'https://lottie.host/d173cd2b-056a-46de-8379-f01bff98143a/yOSt1FnPSk.json',
-            ),
-          ),
+        
         ],
       ),
     );

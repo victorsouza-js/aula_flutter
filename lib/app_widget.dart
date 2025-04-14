@@ -9,6 +9,13 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/home',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/home': (context) => HomePage(),
+      },
+    );
   }
 }
