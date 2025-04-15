@@ -8,25 +8,16 @@ class CalculadoraImc extends StatefulWidget {
 }
 
 class _CalculadoraImcState extends State<CalculadoraImc> {
-  
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       backgroundColor: Colors.blueGrey,
-      body: Center(
-        child: Column(
-          children: [
-
-            
-
-          ],
-        ),
-      ),
+      body: Center(child: Column(children: [
 
       
 
-
+          ],
+        )),
     );
   }
 }
