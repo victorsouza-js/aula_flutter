@@ -25,6 +25,13 @@ class _HomePageState extends State<HomePage> {
   final List<String> _tarefas = [];
   final _formKey = GlobalKey<FormState>();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _carregarTarefas();
+  }
+
   void _addTarefa() {
     if (_formKey.currentState!.validate()) ;
     setState(() {
@@ -47,7 +54,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-    void _carregarTarefas() async {
+  void _carregarTarefas() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? tarefaJson = prefs.getString('tarefas');
 
